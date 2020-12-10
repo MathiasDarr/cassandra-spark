@@ -1,1 +1,2 @@
-sudo docker exec -it cassandra cqlsh --username cassandra --password cassandra
+#!/bin/bash
+docker exec -it cassandra cqlsh --username cassandra --password cassandra
