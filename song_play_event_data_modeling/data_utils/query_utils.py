@@ -1,6 +1,7 @@
 import csv
 import pandas as pd
 
+
 def execute_query(query, session):
     """
     This function will try to execute the query passed by function parameter, or
@@ -12,6 +13,7 @@ def execute_query(query, session):
         session.execute(query)
     except Exception as e:
         print(e)
+
 
 def insert_statement(file, query, insert_dict, session):
     """

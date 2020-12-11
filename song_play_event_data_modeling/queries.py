@@ -35,10 +35,6 @@ def insert_statement(file, query, insert_dict, session):
             session.execute(query, [y(line[x]) for x, y in insert_dict.items()])
 
 
-
-
-
-
 # query 1:  Give me the artist, song title and song's length in the music app history that was heard during \
 # essionId = 338, and itemInSession = 4
 query1 = """CREATE TABLE IF NOT EXISTS song_playlist_session (
@@ -54,10 +50,7 @@ create_song_table_query = """CREATE TABLE IF NOT EXISTS song_plays(
                             artist text, 
                             PRIMARY KEY (artist))
                             """
-
 execute_query(create_song_table_query, dbsession)
-
-
 
 insert_song_play_event_query="""
 INSERT INTO song_plays(arist) VALUES (%s);
@@ -70,8 +63,6 @@ with open(file, encoding='utf8') as f:
     next(csvreader)  # skip header
     for line in csvreader:
         dbsession.execute(insert_song_play_event_query, [cast_variable_type(line[column]) for column, cast_variable_type in d.items()])
-
-
 
 
 file = 'event_datafile_new.csv'

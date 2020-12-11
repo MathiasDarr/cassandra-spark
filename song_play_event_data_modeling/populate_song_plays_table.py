@@ -19,8 +19,6 @@ create_song_table_query = """CREATE TABLE IF NOT EXISTS song_plays(
 
 execute_query(create_song_table_query, dbsession)
 
-
-
 insert_song_play_event_query="""
 INSERT INTO song_plays(artist) VALUES (%s);
 """
